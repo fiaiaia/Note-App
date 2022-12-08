@@ -39,7 +39,7 @@ const Logout = ({ navigation }) => {
         }}
       > 
         <TouchableOpacity
-          onPress = {() => navigation.navigate('Home')}
+          onPress = {() => navigation.navigate('ScreenNote')}
         >
           <Text
             style = {{
