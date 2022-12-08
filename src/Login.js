@@ -31,12 +31,19 @@ export default (props: PropsType) => {
   };
 
   return (
-    <View style={styles.container}>
-      <Image style={styles.image} source={require('../assets/logoku.png')} />
-
-      <StatusBar style="auto" />
-
-      <View style={styles.inputView}>
+    <View 
+      style={styles.container}
+    >
+      <Image 
+        style={styles.image} 
+        source={require('../assets/logoku.png')} 
+      />
+      <StatusBar 
+        style="auto" 
+      />
+      <View 
+        style={styles.inputView}
+      >
         <TextInput
           style={styles.TextInput}
           placeholder="Email"
@@ -45,7 +52,9 @@ export default (props: PropsType) => {
         />
       </View>
 
-      <View style={styles.inputView}>
+      <View 
+        style={styles.inputView}
+      >
         <TextInput
           style={styles.TextInput}
           placeholder="Password"
@@ -55,7 +64,10 @@ export default (props: PropsType) => {
         />
       </View>
 
-      <TouchableOpacity style={styles.loginBtn} onPress={login}>
+      <TouchableOpacity 
+        style={styles.loginBtn} 
+        onPress={login}
+      >
         <Text 
           style={styles.loginText}
         >
