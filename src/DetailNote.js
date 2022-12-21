@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ScrollView, StyleSheet, Text, View, Alert } from 'react-native';
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNotes } from './NoteProvider';
 import RndIconBtn from './RndIconBtn';
 import InputNote from './InputNote';
@@ -28,7 +28,7 @@ const DetailNote = (props) => {
     let notes = [];
     if (result !== null) notes = JSON.parse(result);
 
-    const newNotes = notes.filter((n) => n.id !== note.id);
+    const newNotes = notes.filter(n => n.id !== note.id);
     setNotes(newNotes);
     await AsyncStorage.setItem('notes', JSON.stringify(newNotes));
     props.navigation.goBack();
@@ -98,9 +98,9 @@ const DetailNote = (props) => {
           {note.title}
         </Text>
         <Text 
-          style={styles.desc}
+          style={styles.content}
         >
-          {note.desc}
+          {note.content}
         </Text>
       </ScrollView>
       <View 
@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     padding: 10,
   },
-  desc: {
+  content: {
     fontSize: 20,
     opacity: 0.6,
     padding: 10,
